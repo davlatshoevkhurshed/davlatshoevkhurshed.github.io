@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khurshed Davlatshoev - Learning &amp; Development</title>
+<meta name="description" content="Corporate learning functions built from zero. Selected work: Freedom Broker Kyrgyzstan Academy - platform, compliance programme, sales onboarding.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F3F0;
+  --paper-2:#E8EAE5;
+  --ink:#1B1F1D;
+  --graphite:#5A615C;
+  --rule:#D2D6CF;
+  --pine:#2F5D50;
+  --pine-soft:#2F5D5014;
+  --maxw:1080px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Newsreader",Georgia,serif;font-size:19px;line-height:1.62;
+  font-weight:300;-webkit-font-smoothing:antialiased;
+}
+a{color:var(--pine);}
+:focus-visible{outline:2px solid var(--pine);outline-offset:3px;border-radius:2px;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+/* ---------- type ---------- */
+.eyebrow{
+  font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--graphite);
+}
+h1{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;
+  font-size:clamp(38px,7.2vw,76px);line-height:.98;letter-spacing:-.03em;
+  margin:.18em 0 .16em;
+}
+h2{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:600;
+  font-size:clamp(25px,3.6vw,38px);line-height:1.08;letter-spacing:-.02em;
+  margin:0 0 .5em;
+}
+h3{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:600;
+  font-size:19px;letter-spacing:-.01em;margin:0 0 .35em;
+}
+p{margin:0 0 1.05em;}
+.lede{font-size:clamp(20px,2.3vw,25px);line-height:1.48;font-weight:300;}
+.muted{color:var(--graphite);}
+.mono{font-family:"JetBrains Mono",monospace;}
+
+/* ---------- header ---------- */
+header{border-bottom:1px solid var(--rule);}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;flex-wrap:wrap;}
+.topbar .name{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;}
+nav a{
+  font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.08em;
+  text-decoration:none;color:var(--graphite);margin-left:22px;
+}
+nav a:hover{color:var(--ink);}
+@media(max-width:640px){nav a{margin:0 18px 0 0;display:inline-block;}}
+
+/* ---------- hero ---------- */
+.hero{padding:74px 0 8px;}
+.hero .lede{max-width:34ch;margin-top:14px;}
+.hero-meta{
+  display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;
+  font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--graphite);
+}
+
+/* ---------- day track (signature) ---------- */
+.track-block{padding:52px 0 72px;}
+.track-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;flex-wrap:wrap;gap:8px;}
+.track{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:14px;
+  border-top:1px solid var(--ink);padding-top:14px;
+}
+.week{min-width:0;}
+.week-name{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--graphite);margin-bottom:9px;
+}
+.week-topic{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:14px;
+  line-height:1.24;margin-bottom:12px;min-height:2.5em;
+}
+.days{display:flex;gap:5px;}
+.day{
+  flex:1;height:34px;border:1px solid var(--rule);border-radius:2px;background:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--graphite);
+}
+.day.check{background:var(--pine);border-color:var(--pine);color:#fff;font-weight:700;}
+.gate{
+  margin-top:11px;font-family:"JetBrains Mono",monospace;font-size:11px;
+  color:var(--pine);letter-spacing:.04em;
+}
+.gate b{font-weight:700;}
+@media(max-width:760px){
+  .track{grid-template-columns:1fr;gap:0;}
+  .week{border-bottom:1px solid var(--rule);padding:16px 0;}
+  .week-topic{min-height:0;}
+  .days{max-width:220px;}
+}
+
+/* ---------- sections ---------- */
+section{padding:66px 0;border-top:1px solid var(--rule);}
+.sec-head{margin-bottom:26px;}
+.sec-num{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--pine);font-weight:500;letter-spacing:.18em;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--pine);}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
+@media(max-width:820px){.cols{grid-template-columns:1fr;gap:28px;}}
+.narrow{max-width:62ch;}
+
+ul.plain{list-style:none;padding:0;margin:0;}
+ul.plain li{padding:11px 0 11px 22px;border-bottom:1px solid var(--rule);position:relative;font-size:17px;line-height:1.5;}
+ul.plain li::before{content:"";position:absolute;left:0;top:20px;width:9px;height:1px;background:var(--pine);}
+ul.plain li:first-child{padding-top:0;}
+ul.plain li:first-child::before{top:9px;}
+
+figure{margin:30px 0 0;}
+figure img{
+  width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:3px;background:#fff;
+}
+figcaption{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--graphite);margin-top:10px;line-height:1.5;}
+
+/* ---------- week detail list ---------- */
+.weeks{margin-top:8px;}
+.wk{display:grid;grid-template-columns:88px 1fr;gap:18px;padding:15px 0;border-bottom:1px solid var(--rule);}
+.wk:first-child{border-top:1px solid var(--rule);}
+.wk .n{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--graphite);letter-spacing:.08em;padding-top:4px;}
+.wk p{margin:0;font-size:17px;line-height:1.5;}
+@media(max-width:640px){.wk{grid-template-columns:1fr;gap:4px;}}
+
+/* ---------- results ---------- */
+.results{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;}
+@media(max-width:640px){.results{grid-template-columns:1fr;}}
+.res{padding:20px 0;border-bottom:1px solid var(--rule);}
+.res .fig{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:34px;letter-spacing:-.02em;line-height:1;color:var(--pine);}
+.res .txt{font-size:16px;line-height:1.45;margin-top:8px;color:var(--ink);}
+.res .src{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--graphite);margin-top:6px;letter-spacing:.05em;}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink);color:var(--paper);border-top:none;}
+.contact h2{color:var(--paper);}
+.contact a{color:#9FC7B8;}
+.contact .rows{margin-top:22px;}
+.crow{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid #333B36;font-family:"JetBrains Mono",monospace;font-size:13px;}
+.crow span{color:#8B948E;letter-spacing:.1em;font-size:11px;text-transform:uppercase;padding-top:2px;}
+@media(max-width:640px){.crow{grid-template-columns:1fr;gap:2px;}}
+footer{padding:26px 0 34px;font-family:"JetBrains Mono",monospace;font-size:11px;color:#8B948E;}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease;}
+.rv.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap topbar">
+    <div class="name">Khurshed Davlatshoev</div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#programme">Onboarding</a>
+      <a href="#results">Results</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">Learning &amp; Development</div>
+    <h1>I build learning<br>functions from zero.</h1>
+    <p class="lede muted">Four years, four companies, four times starting with nothing: no platform, no courses, no record of who knew what.</p>
+    <div class="hero-meta">
+      <span>Head of Academy, Freedom Broker Kyrgyzstan</span>
+      <span>Bishkek &middot; open to relocation</span>
+    </div>
+  </div>
+
+  <div class="track-block">
+    <div class="track-label">
+      <div class="eyebrow">Sales manager onboarding &middot; 25 working days &middot; 6 checkpoints</div>
+      <div class="eyebrow">Day 1 &rarr; independent work</div>
+    </div>
+    <div class="track">
+      <div class="week">
+        <div class="week-name">Week 1</div>
+        <div class="week-topic">Company, access and setup</div>
+        <div class="days"><i class="day">1</i><i class="day">2</i><i class="day">3</i><i class="day">4</i><i class="day">5</i></div>
+        <div class="gate">&nbsp;</div>
+      </div>
+      <div class="week">
+        <div class="week-name">Week 2</div>
+        <div class="week-topic">Financial markets and instruments</div>
+        <div class="days"><i class="day">6</i><i class="day">7</i><i class="day">8</i><i class="day">9</i><i class="day check">10</i></div>
+        <div class="gate">Test 1 &middot; <b>80%</b></div>
+      </div>
+      <div class="week">
+        <div class="week-name">Week 3</div>
+        <div class="week-topic">Products and the trading platform</div>
+        <div class="days"><i class="day">11</i><i class="day">12</i><i class="day">13</i><i class="day">14</i><i class="day check">15</i></div>
+        <div class="gate">Test 2 &middot; <b>80%</b></div>
+      </div>
+      <div class="week">
+        <div class="week-name">Week 4</div>
+        <div class="week-topic">Communication and sales</div>
+        <div class="days"><i class="day">16</i><i class="day">17</i><i class="day">18</i><i class="day">19</i><i class="day check">20</i></div>
+        <div class="gate">Test 3 &middot; <b>85%</b></div>
+      </div>
+      <div class="week">
+        <div class="week-name">Week 5</div>
+        <div class="week-topic">Compliance and final assessment</div>
+        <div class="days"><i class="day">21</i><i class="day">22</i><i class="day">23</i><i class="day check">24</i><i class="day check">25</i></div>
+        <div class="gate">Role-play &middot; mentor sign-off &middot; <b>approval</b></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="brief">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-num">01</div><h2>The brief</h2></div>
+    <div class="cols">
+      <div>
+        <p>Freedom Broker Kyrgyzstan is a licensed broker inside Freedom Holding Corp. (NASDAQ: FRHC), running brokerage, dealer, trust management and virtual-asset exchange services.</p>
+        <p>When I joined as Head of Academy in April 2026 there was no learning function. No platform. No course library. No onboarding path. No record of who had been trained on what. Compliance training was a regulatory obligation with nothing behind it.</p>
+      </div>
+      <div>
+        <p class="muted">Below is what I built in the first four months, and the reasoning behind it. All of it is live and in use.</p>
+        <ul class="plain">
+          <li><span class="mono">12+</span> &nbsp;courses published</li>
+          <li><span class="mono">11</span> &nbsp;mandatory courses sequenced across 25 working days</li>
+          <li><span class="mono">51</span> &nbsp;tracked items in the onboarding programme</li>
+          <li><span class="mono">7</span> &nbsp;functions with named responsibility</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-num">02</div><h2>Platform and course library</h2></div>
+    <div class="narrow">
+      <p>I ran the platform work end to end: requirements, vendor evaluation, the procurement case, configuration, SCORM integration and rollout. The company runs on an AI-native LMS. Everything inside it is mine.</p>
+    </div>
+    <div class="cols" style="margin-top:22px">
+      <div>
+        <ul class="plain">
+          <li>A library of 12+ published courses in Russian and English, covering compliance, product knowledge and financial-market fundamentals.</li>
+          <li>Mixed delivery: SCORM packages built in-house alongside native platform courses, so format follows content rather than tool.</li>
+          <li>Enrolment, deadlines, scoring thresholds and completion tracking configured per course - the audit trail compliance needs, and the visibility department heads asked for.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Formal standing</h3>
+        <p>I also wrote the Academy's governing document - thirteen chapters covering structure, functions, training and attestation procedure, KPI and reporting.</p>
+        <p class="muted">A learning function without internal regulation behind it is a service desk. With it, the Academy has authority to set standards rather than fulfil requests.</p>
+      </div>
+    </div>
+    <figure>
+      <img src="library.jpg" alt="Screenshot of the live course library showing published compliance, product and market-fundamentals courses">
+      <figcaption>Live course library - compliance, product and market-fundamentals courses, SCORM and native, with enrolment and status per course.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="compliance">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-num">03</div><h2>Sequencing the compliance programme</h2></div>
+    <div class="cols">
+      <div>
+        <p>Eleven mandatory courses had to be completed company-wide. The usual approach is to release them together and chase people until the deadline.</p>
+        <p>I sequenced them instead. One course at a time, two to three working days each, weekends excluded, a fixed close date per course, spread across 25 working days.</p>
+        <h3 style="margin-top:26px">Why it matters</h3>
+        <p class="muted">Staggering removes the collision between training and the working day. Non-completion becomes visible on day three rather than at the deadline. And compliance gets a defensible record of when each obligation was met, course by course.</p>
+      </div>
+      <figure style="margin:0">
+        <img src="schedule.jpg" alt="The mandatory course schedule issued to staff, listing eleven courses with dates and close dates">
+        <figcaption>Schedule issued to staff - 11 courses, 25 working days, a fixed close date per course.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="programme">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-num">04</div><h2>Sales manager onboarding</h2></div>
+    <div class="narrow">
+      <p>A five-week path from first day to independent work on the line. 25 working days, 51 tracked items, blended across courses, self-study, briefings, meetings and mandatory practice with a mentor on a demo account.</p>
+      <p>Every item carries a named learning outcome and an owner. Nothing sits in the programme as "read this" - each line specifies what the person must be able to do, who checks it, and on which day.</p>
+    </div>
+
+    <div class="weeks">
+      <div class="wk"><div class="n">WEEK 1</div><p>Contracts, equipment, platform and CRM access, the holding and the local entity, regulation and investor protection, role KPI and compensation, code of ethics.</p></div>
+      <div class="wk"><div class="n">WEEK 2</div><p>Market structure, world exchanges, equities, bonds, ETFs, IPO, options, investment risk, finance fundamentals, technical and fundamental analysis.</p></div>
+      <div class="wk"><div class="n">WEEK 3</div><p>Brokerage account, savings sub-account, trust management, tariffs, platform navigation, opening a client account end to end, demo portfolios, order types, account security.</p></div>
+      <div class="wk"><div class="n">WEEK 4</div><p>Tone of voice, call structure, five inbound and outbound scripts, complaint handling, response standards, needs discovery, objections, cross-sell and closing, prohibited phrases.</p></div>
+      <div class="wk"><div class="n">WEEK 5</div><p>Risk disclaimer, personal data and client verification, anti-fraud, IT security, mandatory group compliance courses, satisfaction survey, individual development plan.</p></div>
+    </div>
+
+    <div class="cols" style="margin-top:40px">
+      <div>
+        <h3>Rising thresholds, not one exam</h3>
+        <p>Six checkpoints instead of a single test at the end. Market fundamentals at 80% on day 10. Products and platform at 80% on day 15. Service and sales at 85% on day 20. Then a three-scenario role-play, a mentor sign-off based on supervised live calls, and a final joint approval by mentor and department head.</p>
+      </div>
+      <div>
+        <h3>Seven owners, written down</h3>
+        <p>Employee, mentor, department head, L&amp;D, Compliance, IT and HR each have defined responsibilities in the document.</p>
+        <p class="muted">This was deliberate. A programme that only L&amp;D owns is one that quietly stops running the moment L&amp;D is busy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-num">05</div><h2>Building content with AI</h2></div>
+    <div class="cols">
+      <div>
+        <p>I produce e-learning in-house rather than buying it or briefing an agency. SCORM courses are built with AI tooling and Figma, which is what makes a library this size possible for a function this small.</p>
+        <p class="muted">Turnaround on a new mandatory course went from a procurement cycle to a production task, and the content stays accurate to our own regulation rather than a vendor's generic version.</p>
+      </div>
+      <div>
+        <ul class="plain">
+          <li><b>Where AI earns its place:</b> drafting from source material such as internal policy and regulation, restructuring dense legal text into learnable sequences, generating scenario variants and assessment items.</li>
+          <li><b>Where it does not:</b> deciding what the learning outcome is, what a person must be able to do afterwards, where the threshold sits, and whether a course should exist at all.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-num">06</div><h2>Earlier results</h2></div>
+    <div class="results">
+      <div class="res">
+        <div class="fig">60% &rarr; 10%</div>
+        <div class="txt">Leadership turnover, through a culture and leadership development programme.</div>
+        <div class="src">MYSTORY &middot; AI-DRIVEN EDTECH</div>
+      </div>
+      <div class="res">
+        <div class="fig">-25%</div>
+        <div class="txt">Onboarding time, from 3 months to 2.2, with quality metrics held.</div>
+        <div class="src">SIMBANK | DOSCREDOBANK</div>
+      </div>
+      <div class="res">
+        <div class="fig">+35%</div>
+        <div class="txt">Employee engagement, alongside a 15% reduction in operational costs.</div>
+        <div class="src">MYSTORY &middot; AI-DRIVEN EDTECH</div>
+      </div>
+      <div class="res">
+        <div class="fig">4.8/5</div>
+        <div class="txt">Average rating across 30+ sessions on sales, service and leadership.</div>
+        <div class="src">SIMBANK | DOSCREDOBANK</div>
+      </div>
+    </div>
+
+    <div style="margin-top:44px" class="narrow">
+      <h3>How I work</h3>
+      <ul class="plain">
+        <li>I start from the business signal, not the request. A department head asking for "a sales training" is describing a symptom.</li>
+        <li>I write down who owns what. Most learning programmes decay because responsibility sits with one function.</li>
+        <li>I build rather than brief. It keeps the feedback loop short and the material accurate.</li>
+        <li>I would rather have one number that holds up than a dashboard that does not. Completion rates are not impact.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p class="muted" style="color:#A8B1AB;max-width:46ch">Currently Head of Academy at Freedom Broker Kyrgyzstan. Open to L&amp;D lead roles in Europe, with relocation.</p>
+    <div class="rows">
+      <div class="crow"><span>Email</span><a href="mailto:davlatshoevkhurshed.98@gmail.com">davlatshoevkhurshed.98@gmail.com</a></div>
+      <div class="crow"><span>LinkedIn</span><a href="https://linkedin.com/in/khurshed-davlatshoev">linkedin.com/in/khurshed-davlatshoev</a></div>
+      <div class="crow"><span>Phone</span><a href="tel:+996771226998">+996 771 226 998</a></div>
+      <div class="crow"><span>CV</span><a href="cv.pdf">Download PDF</a></div>
+      <div class="crow"><span>Languages</span><span style="color:var(--paper);text-transform:none;letter-spacing:0;font-size:13px">Russian and Persian native &middot; English C1</span></div>
+    </div>
+    <footer>Bishkek, Kyrgyzstan</footer>
+  </div>
+</section>
+</main>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('section .wrap > *, .track-block');
+  if(reduce || !('IntersectionObserver' in window)) return;
+  targets.forEach(function(el){ el.classList.add('rv'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  targets.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
